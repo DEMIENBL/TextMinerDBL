@@ -21,6 +21,7 @@ Resumen Temático	Combina LDA y NLP para generar una frase representativa por te
 Análisis Completo	Integra todos los módulos de análisis en una sola respuesta.	/api/analisis-completo
 Historial de Resultados	Lista todos los análisis guardados en la carpeta de resultados.	/api/historial
 Arquitectura General
+
                ┌───────────────────────────────┐
                │        Cliente / Frontend     │
                │   Dashboard HTML + JavaScript │

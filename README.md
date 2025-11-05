@@ -48,7 +48,7 @@ Arquitectura General
                │          /resultados/          │
                │  Guarda cada análisis con fecha│
                └───────────────────────────────-
-               
+
 Estructura del Proyecto
 textminer/
  ├── src/

@@ -49,6 +49,8 @@ Arquitectura General
                │  Guarda cada análisis con fecha│
                └───────────────────────────────┘
 
+               
+
 Estructura del Proyecto
 textminer/
  ├── src/
@@ -73,6 +75,8 @@ textminer/
  ├── arquitectura.png
  ├── guia_presentacion.txt
  └── .gitignore
+
+
 
 Ejemplo de Uso
 Solicitud:

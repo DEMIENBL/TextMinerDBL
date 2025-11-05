@@ -49,30 +49,30 @@ Arquitectura General
                │  Guarda cada análisis con fecha│
                └───────────────────────────────-
 
-Estructura del Proyecto
-textminer/
- ├── src/
- │   ├── main/
- │   │   ├── java/com/demien/textminer/
- │   │   │   ├── controller/
- │   │   │   ├── service/
- │   │   │   └── TextminerDblApplication.java
- │   │   ├── resources/
- │   │   │   ├── models/
- │   │   │   │   ├── en-token.bin
- │   │   │   │   └── en-sent.bin
- │   │   │   ├── stoplists/
- │   │   │   │   └── en.txt
- │   │   │   └── static/
- │   │   │       ├── index.html
- │   │   │       └── resultados/
- │   └── test/
- ├── resultados/
- ├── pom.xml
- ├── README.md
- ├── arquitectura.png
- ├── guia_presentacion.txt
- └── .gitignore
+
+TextMinerDBL/
+├── src/
+│   ├── main/
+│   │   ├── java/com/demien/textminer/
+│   │   │   ├── controller/
+│   │   │   ├── service/
+│   │   │   └── TextminerDblApplication.java
+│   │   ├── resources/
+│   │   │   ├── models/
+│   │   │   │   ├── en-token.bin
+│   │   │   │   └── en-sent.bin
+│   │   │   ├── stoplists/
+│   │   │   │   └── en.txt
+│   │   │   └── static/
+│   │   │       ├── index.html
+│   │   │       └── resultados/
+│   └── test/
+├── resultados/
+├── pom.xml
+├── README.md
+├── arquitectura.png
+├── guia_presentacion.txt
+└── .gitignore
 
 
 
@@ -113,6 +113,7 @@ Respuesta esperada:
   "versionModelo": "TextMinerDBL v6.0",
   "autor": "Demien Becerra Lozano"
 }
+
 
 Instrucciones de Ejecución
 

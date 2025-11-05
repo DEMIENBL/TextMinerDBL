@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TextMinerDBL - Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f8f9fa;
+      color: #222;
+    }
+    header {
+      background-color: #0069d9;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+    main {
+      padding: 20px 40px;
+    }
+    h2 {
+      color: #0069d9;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .tag {
+      display: inline-block;
+      background-color: #e9ecef;
+      border-radius: 12px;
+      padding: 4px 10px;
+      margin: 3px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>TextMinerDBL — Historial de Análisis</header>
+
+<main>
+  <section class="card">
+    <h2>📜 Historial de análisis</h2>
+    <table id="tabla-historial">
+      <thead>
+        <tr>
+          <th>Archivo</th>
+          <th>Fecha</th>
+          <th>Sentimiento</th>
+          <th>Temas principales</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="5" style="text-align:center;">Cargando...</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="detalle" class="card" style="display:none;">
+    <h2>🔍 Detalle del análisis</h2>
+    <pre id="detalle-json" style="white-space: pre-wrap; background:#f8f9fa; padding:15px; border-radius:8px;"></pre>
+  </section>
+</main>
+
+<script>
+  const API_BASE = 'http://localhost:8080/api';
+
+  // Cargar historial
+  async function cargarHistorial() {
+    try {
+      const res = await fetch(`${API_BASE}/historial`);
+      const data = await res.json();
+
+      const tbody = document.querySelector('#tabla-historial tbody');
+      tbody.innerHTML = '';
+
+      if (!data.historial || data.historial.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">Sin resultados guardados.</td></tr>';
+        return;
+      }
+
+      data.historial.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${item.archivo}</td>
+          <td>${item.fecha}</td>
+          <td>${item.sentimiento}</td>
+          <td>${item.temasPrincipales.map(t => `<span class='tag'>${t}</span>`).join(' ')}</td>
+          <td><button onclick="verDetalle('${item.archivo}')">Ver</button></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    } catch (err) {
+      console.error('Error cargando historial:', err);
+    }
+  }
+
+  // Ver detalle de un análisis
+  async function verDetalle(nombreArchivo) {
+    try {
+      const res = await fetch(`resultados/${nombreArchivo}`);
+      const json = await res.json();
+
+      const detalle = document.getElementById('detalle');
+      detalle.style.display = 'block';
+      document.getElementById('detalle-json').textContent = JSON.stringify(json, null, 2);
+    } catch (err) {
+      console.error('Error cargando detalle:', err);
+    }
+  }
+
+  cargarHistorial();
+</script>
+
+</body>
+</html>

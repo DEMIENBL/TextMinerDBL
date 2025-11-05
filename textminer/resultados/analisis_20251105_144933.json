@@ -1,0 +1,42 @@
+{
+  "sentimiento" : {
+    "negativas" : [ ],
+    "sentimiento" : "positivo",
+    "positivas" : [ "excelente" ],
+    "totalPalabras" : 25
+  },
+  "entidades" : {
+    "LOCATION" : [ ],
+    "ORGANIZATION" : [ "ITESO" ],
+    "PERSON" : [ ],
+    "MISC" : [ ]
+  },
+  "resumenClasico" : [ "\"Demien Becerra analizó los datos del ITESO y descubrió patrones interesantes sobre innovación y tecnología educativa." ],
+  "temasDetectados" : [ {
+    "tema" : 1,
+    "palabrasClave" : [ "enfoque", "presentación", "destacaron", "expertos", "tecnología", "sobre", "descubrió", "becerra", "demien" ]
+  }, {
+    "tema" : 2,
+    "palabrasClave" : [ "innovación", "patrones", "iteso", "del", "datos", "analizó" ]
+  }, {
+    "tema" : 3,
+    "palabrasClave" : [ "los", "práctico", "excelente", "educativa", "interesantes" ]
+  } ],
+  "resumenTematico" : [ {
+    "tema" : 1,
+    "palabrasClave" : [ "enfoque", "expertos", "patrones", "descubrió", "datos", "analizó" ],
+    "fraseRepresentativa" : "\"Demien Becerra analizó los datos del ITESO y descubrió patrones interesantes sobre innovación y tecnología educativa."
+  }, {
+    "tema" : 2,
+    "palabrasClave" : [ "práctico", "presentación", "tecnología", "innovación", "sobre", "interesantes", "iteso", "becerra", "demien" ],
+    "fraseRepresentativa" : "\"Demien Becerra analizó los datos del ITESO y descubrió patrones interesantes sobre innovación y tecnología educativa."
+  }, {
+    "tema" : 3,
+    "palabrasClave" : [ "los", "excelente", "destacaron", "educativa", "del" ],
+    "fraseRepresentativa" : "\"Demien Becerra analizó los datos del ITESO y descubrió patrones interesantes sobre innovación y tecnología educativa."
+  } ],
+  "resumenGlobal" : [ "\"Demien Becerra analizó los datos del ITESO y descubrió patrones interesantes sobre innovación y tecnología educativa.", "\"Demien Becerra analizó los datos del ITESO y descubrió patrones interesantes sobre innovación y tecnología educativa.", "\"Demien Becerra analizó los datos del ITESO y descubrió patrones interesantes sobre innovación y tecnología educativa." ],
+  "longitudTexto" : 25,
+  "versionModelo" : "TextMinerDBL v6.0",
+  "autor" : "Demien Becerra Lozano"
+}
